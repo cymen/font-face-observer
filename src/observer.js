@@ -1,3 +1,4 @@
+var Promise = require('promise');
 var dom = require('./dom');
 var Ruler = require('./ruler');
 
@@ -5,9 +6,11 @@ var Ruler = require('./ruler');
  * @constructor
  *
  * @param {string} family
- * @param {fontface.Descriptors} descriptors
+ * @param [fontface.Descriptors] descriptors
  */
 var Observer = function (family, descriptors) {
+  descriptors = descriptors || {weight: 'normal'};
+
   /**
    * @type {string}
    */

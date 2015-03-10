@@ -1,6 +1,6 @@
 {
   "name": "font-face-observer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Font face observer for eventing when web fonts are loaded",
   "main": "src/observer.js",
   "scripts": {

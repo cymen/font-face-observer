@@ -6,37 +6,46 @@ Font Face Observer is a small `@font-face` loader and monitor compatible with an
 
 Include your `@font-face` rules as usual. Fonts can be supplied by either a font service such as [Google Fonts](http://www.google.com/fonts), [Typekit](http://typekit.com), and [Webtype](http://webtype.com) or be self-hosted. It doesn't matter where, when, or how you load your fonts. You can set up monitoring for a single font family at a time:
 
-    var observer = new FontFaceObserver('My Family', {
-      weight: 400
-    });
+```javascript
+var FontFaceObserver = require('font-face-observer');
+var observer = new FontFaceObserver('My Family', {
+  weight: 400
+});
 
-    observer.check().then(function () {
-      console.log('Font is available');
-    }, function () {
-      console.log('Font is not available');
-    });
+observer.check().then(function () {
+  console.log('Font is available');
+}, function () {
+  console.log('Font is not available');
+});
+```
 
 The `FontFaceObserver` constructor takes two (required) arguments: the font family name and an object describing the variation. The object can contain `weight`, `style`, `stretch`, `variant`, and `featureSettings` properties. If a property is not present it will default to `normal`. To start observing font loads, call the `check` method. It'll immediately return a new Promise that resolves when the font is available and rejected when the font is not available.
 
 If your font doesn't contain latin characters you can pass a custom test string to the `check` method.
 
-    var observer = new FontFaceObserver('My Family', {});
+```javascript
+var FontFaceObserver = require('font-face-observer');
+var observer = new FontFaceObserver('My Family', {});
 
-    observer.check('中国').then(function () {
-      console.log('Font is available');
-    }, function () {
-      console.log('Font is not available');
-    });
+observer.check('中国').then(function () {
+  console.log('Font is available');
+}, function () {
+  console.log('Font is not available');
+});
+```
 
 The default timeout for giving up on font loading is 3 seconds. You can increase or decrease this by passing a number of milliseconds as the second parameter to the `check` method.
 
-    var observer = new FontFaceObserver('My Family', {});
+```javascript
+var FontFaceObserver = require('font-face-observer');
+var observer = new FontFaceObserver('My Family', {});
 
-    observer.check(null, 5000).then(function () {
-      console.log('Font is available');
-    }, function () {
-      console.log('Font is not available after waiting 5 seconds');
-    });
+observer.check(null, 5000).then(function () {
+  console.log('Font is available');
+}, function () {
+  console.log('Font is not available after waiting 5 seconds');
+});
+```
 
 ## Installation
 

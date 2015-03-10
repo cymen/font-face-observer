@@ -47,12 +47,6 @@ observer.check(null, 5000).then(function () {
 });
 ```
 
-## Installation
-
-If you're using npm you can install Font Face Observer as a dependency:
-
-    > npm install font-face-observer
-
 ## Browser support
 
 FontFaceObserver has been tested and works on the following browsers:

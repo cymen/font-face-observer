@@ -118,7 +118,7 @@ Observer.prototype.check = function (text, timeout) {
 
       that = this;
 
-  rulerA.setFont('sans-serif', style);
+  rulerA.setFont('"Times New Roman", sans-serif', style);
   rulerB.setFont('serif', style);
   rulerC.setFont('monospace', style);
 

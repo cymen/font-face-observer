@@ -27,5 +27,12 @@
   "devDependencies": {
     "jasmine-node": "^1.14.5",
     "jsdom": "^3.1.2"
+  },
+  "bugs": {
+    "url": "https://github.com/cymen/font-face-observer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cymen/font-face-observer.git"
   }
 }
